@@ -1,6 +1,7 @@
 # Amateurfunk-adi_file_editor
 Processing of Adi files for amateur radio. Changing and creating log entries.
-![adi-file-editor](https://github.com/benrun007/Amateurfunk-adi_file_editor/assets/174305744/33d1cc8d-c108-4194-927f-a6e7f334bacc)
+
+![Adi_File_Editor](https://github.com/benrun007/Amateurfunk-adi_file_editor/assets/174305744/af0e37ed-a0d6-4d27-bfd3-d631a8b88b64)
 
 The ADI File Editor is a custom tool designed to edit and supplement log files in the ADIF format (Amateur Data Interchange Format). This program is particularly useful for radio amateurs who use modes such as FT8 or FT4. Here is a summary of the essential functions and features of the editor:
 
