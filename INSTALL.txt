@@ -1,1 +1,4 @@
+English:
+To start the ADI File Editor on Linux, it is necessary to set the "Allow executing file as program" flag.
+German:
 Um den Adi-FileEditor zu starten ist es unter Linux erforderlich, das Flag "Ausführbar erlauben" zu setzen.
