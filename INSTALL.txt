@@ -1,0 +1,1 @@
+Um den Adi-FileEditor zu starten ist es unter Linux erforderlich, das Flag "Ausführbar erlauben" zu setzen.
