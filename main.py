@@ -4,8 +4,10 @@ from tkinter import filedialog, messagebox
 
 class ADIFileApp:
     def __init__(self, root):
+        self.anzahl = None
         self.root = root
         self.root.title("ADI File Editor")
+        #self.root.geometry("600x600")
 
         self.file_path = tk.StringVar()
         self.records = []
@@ -13,37 +15,50 @@ class ADIFileApp:
         self.current_record_index = -1
         self.filters = {}
         self.is_filtered = False
-        self.last_saved_index = -1  # Speichert den Index des zuletzt gespeicherten Datensatzes
+        self.last_saved_index = -1
 
         self.create_widgets()
+        self.create_bindings()
 
     def create_widgets(self):
         tk.Label(self.root, text="ADI File Path:").grid(row=0, column=0, sticky=tk.W)
         tk.Entry(self.root, textvariable=self.file_path, width=50).grid(row=0, column=1, columnspan=2, sticky=tk.W)
-        tk.Button(self.root, text="Browse", command=self.browse_file).grid(row=0, column=3, sticky=tk.W)
+        tk.Button(self.root, text="Browse", command=self.browse_file).grid(row=0, column=3, sticky=tk.E)
 
-        tk.Button(self.root, text="Load", command=self.load_file).grid(row=0, column=4, sticky=tk.W)
+        tk.Button(self.root, text="Load", command=self.load_file).grid(row=0, column=4, sticky=tk.E)
 
         self.fields_frame = tk.Frame(self.root)
         self.fields_frame.grid(row=1, column=0, columnspan=6, sticky=tk.W)
 
-        tk.Button(self.root, text="Previous", command=self.previous_record).grid(row=2, column=0, sticky=tk.W)
-        tk.Button(self.root, text="Next", command=self.next_record).grid(row=2, column=1, sticky=tk.W)
-        tk.Button(self.root, text="First", command=self.first_record).grid(row=2, column=2, sticky=tk.W)
-        tk.Button(self.root, text="Last", command=self.last_record).grid(row=2, column=3, sticky=tk.W)
-
-        tk.Button(self.root, text="New Record", command=self.new_record).grid(row=3, column=0, sticky=tk.W)
-        tk.Button(self.root, text="Save", command=self.confirm_save).grid(row=3, column=1, sticky=tk.W)
-        tk.Button(self.root, text="Delete", command=self.confirm_delete).grid(row=3, column=2, sticky=tk.W)
-        self.filter_button = tk.Button(self.root, text="Filter", command=self.open_filter_window)
-        self.filter_button.grid(row=3, column=3, sticky=tk.W)
+        # Placeholder for buttons to appear after loading data
+        self.button_frame = tk.Frame(self.root)
+        self.button_frame.grid(row=2, column=0, columnspan=6, sticky=tk.W)
 
         self.status_var = tk.StringVar()
-        self.status_label = tk.Label(self.root, textvariable=self.status_var, anchor='w')
-        self.status_label.grid(row=4, column=0, columnspan=6, sticky=tk.W + tk.E)
+        self.status_label = tk.Label(self.root, textvariable=self.status_var)
+        self.status_label.grid(row=4, column=0, columnspan=6, sticky=tk.W)
+
+    def create_buttons(self):
+        tk.Button(self.button_frame, text="Previous", command=self.previous_record).grid(row=0, column=0, sticky=tk.E)
+        tk.Button(self.button_frame, text="Next", command=self.next_record).grid(row=0, column=1, sticky=tk.E)
+        tk.Button(self.button_frame, text="First", command=self.first_record).grid(row=0, column=2, sticky=tk.E)
+        tk.Button(self.button_frame, text="Last", command=self.last_record).grid(row=0, column=3, sticky=tk.E)
+        tk.Button(self.button_frame, text="New Record", command=self.new_record).grid(row=1, column=0, sticky=tk.E)
+        tk.Button(self.button_frame, text="Save", command=self.confirm_save).grid(row=1, column=1, sticky=tk.E)
+        tk.Button(self.button_frame, text="Delete", command=self.confirm_delete).grid(row=1, column=2, sticky=tk.E)
+        self.filter_button = tk.Button(self.button_frame, text="Filter", command=self.open_filter_window)
+        self.filter_button.grid(row=1, column=3, sticky=tk.E)
+
+    def create_bindings(self):
+        self.root.bind("<Left>", lambda e: self.previous_record())
+        self.root.bind("<Right>", lambda e: self.next_record())
+        self.root.bind("<Home>", lambda e: self.first_record())
+        self.root.bind("<End>", lambda e: self.last_record())
+        self.root.bind("<Control-s>", lambda e: self.confirm_save())
+        self.root.bind("<Control-n>", lambda e: self.new_record())
 
     def browse_file(self):
-        file_path = filedialog.askopenfilename(filetypes=[("ADI Files", "*.adi")])
+        file_path = filedialog.askopenfilename()
         if file_path:
             self.file_path.set(file_path)
 
@@ -61,6 +76,7 @@ class ADIFileApp:
             self.records = [self.parse_record(record) for record in raw_records if record.strip()]
             self.filtered_records = self.records
             self.current_record_index = 0 if self.last_saved_index == -1 else self.last_saved_index
+            self.create_buttons()
             self.display_record()
             self.update_status()
         except Exception as e:
@@ -92,7 +108,44 @@ class ADIFileApp:
             entry.insert(0, value)
             self.entries[tag] = entry
 
-        self.update_status()  # Aktualisiere den Status nach dem Anzeigen eines Datensatzes
+    def update_status(self):
+        total_records = len(self.filtered_records)
+        current_record_num = self.current_record_index + 1 if self.filtered_records else 0
+        status_text = f"Loaded records: {total_records}, Current record: {current_record_num}"
+        self.status_var.set(status_text)
+
+    def previous_record(self):
+        if self.current_record_index > 0:
+            self.current_record_index -= 1
+            self.display_record()
+            self.update_status()
+
+    def next_record(self):
+        if self.current_record_index < len(self.filtered_records) - 1:
+            self.current_record_index += 1
+            self.display_record()
+            self.update_status()
+
+    def first_record(self):
+        if self.filtered_records:
+            self.current_record_index = 0
+            self.display_record()
+            self.update_status()
+
+    def last_record(self):
+        if self.filtered_records:
+            self.current_record_index = len(self.filtered_records) - 1
+            self.display_record()
+            self.update_status()
+
+    def delete_record(self):
+        if self.current_record_index >= 0 and self.current_record_index < len(self.filtered_records):
+            del self.records[self.records.index(self.filtered_records[self.current_record_index])]
+            self.filtered_records = self.records
+            if self.current_record_index >= len(self.filtered_records):
+                self.current_record_index = len(self.filtered_records) - 1
+            self.display_record()
+            self.update_status()
 
     def new_record(self):
         default_record = {
@@ -110,7 +163,7 @@ class ADIFileApp:
     def confirm_save(self):
         if messagebox.askyesno("Confirm Save", "Are you sure you want to save the changes?"):
             self.save_file()
-            self.load_file()  # Refresh the records after saving
+            self.load_file()  # Refresh the records after saving        # Logic to save the current record
 
     def save_file(self):
         self.save_current_record()
@@ -141,45 +194,6 @@ class ADIFileApp:
             updated_record[updated_tag] = value
         return updated_record
 
-    def confirm_delete(self):
-        if self.current_record_index >= 0 and self.current_record_index < len(self.filtered_records):
-            confirm = messagebox.askyesno("Confirm Delete", "Are you sure you want to delete this record?")
-            if confirm:
-                self.delete_record()
-
-    def delete_record(self):
-        if self.current_record_index >= 0 and self.current_record_index < len(self.filtered_records):
-            del self.records[self.records.index(self.filtered_records[self.current_record_index])]
-            self.filtered_records = self.records
-            if self.current_record_index >= len(self.filtered_records):
-                self.current_record_index = len(self.filtered_records) - 1
-            self.display_record()
-            self.update_status()
-
-    def previous_record(self):
-        if self.current_record_index > 0:
-            self.save_current_record()
-            self.current_record_index -= 1
-            self.display_record()
-
-    def next_record(self):
-        if self.current_record_index < len(self.filtered_records) - 1:
-            self.save_current_record()
-            self.current_record_index += 1
-            self.display_record()
-
-    def first_record(self):
-        if len(self.filtered_records) > 0:
-            self.save_current_record()
-            self.current_record_index = 0
-            self.display_record()
-
-    def last_record(self):
-        if len(self.filtered_records) > 0:
-            self.save_current_record()
-            self.current_record_index = len(self.filtered_records) - 1
-            self.display_record()
-
     def save_current_record(self):
         if self.current_record_index < 0 or self.current_record_index >= len(self.filtered_records):
             return
@@ -188,12 +202,19 @@ class ADIFileApp:
         for tag, entry in self.entries.items():
             record[tag] = entry.get()
 
+    def confirm_delete(self):
+        if self.current_record_index >= 0 and self.current_record_index < len(self.filtered_records):
+            confirm = messagebox.askyesno("Confirm Delete", "Are you sure you want to delete this record?")
+            if confirm:
+                self.delete_record()
+
     def open_filter_window(self):
         filter_window = tk.Toplevel(self.root)
         filter_window.title("Filter Records")
 
         filters = {}
-        for i, (tag, _) in enumerate(self.records[0].items()):
+
+        for i, (tag, _) in enumerate(self.records[self.current_record_index].items()):
             tk.Label(filter_window, text=f"{tag}:").grid(row=i, column=0, sticky=tk.W)
             entry = tk.Entry(filter_window, width=50)
             entry.grid(row=i, column=1, sticky=tk.W)
@@ -215,9 +236,8 @@ class ADIFileApp:
         def cancel_filter():
             filter_window.destroy()
 
-        tk.Button(filter_window, text="OK", command=apply_filter).grid(row=len(self.records[0]), column=0, sticky=tk.W)
-        tk.Button(filter_window, text="Cancel", command=cancel_filter).grid(row=len(self.records[0]), column=1,
-                                                                            sticky=tk.W)
+        tk.Button(filter_window, text="OK", command=apply_filter).grid(row=len(self.records[0]) +1, column=0, sticky=tk.W)
+        tk.Button(filter_window, text="Cancel", command=cancel_filter).grid(row=len(self.records[0]) +1, column=1, sticky=tk.W)
 
     def remove_filter(self):
         self.filters = {}
@@ -227,12 +247,6 @@ class ADIFileApp:
         self.update_status()
         self.is_filtered = False
         self.filter_button.config(text="Filter", command=self.open_filter_window)
-
-    def update_status(self):
-        total_records = len(self.filtered_records)
-        current_record_num = self.current_record_index + 1 if self.filtered_records else 0
-        status_text = f"Loaded records: {total_records}, Current record: {current_record_num}"
-        self.status_var.set(status_text)
 
 
 if __name__ == "__main__":
