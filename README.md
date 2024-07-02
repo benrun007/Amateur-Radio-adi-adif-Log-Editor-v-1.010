@@ -17,37 +17,37 @@ Löschen: Einträge können gelöscht werden.
 Filtern: Es ist möglich, nach bestimmten Kriterien zu filtern, indem man die entsprechenden Felder verwendet.
 Anzeige der Einträge: Informationen wie das Rufzeichen der Gegenstation, das eigene Grid-Quadrat, die Betriebsart, die gesendeten und empfangenen Signalberichte, das Datum und die Uhrzeit des QSOs sowie weitere Details werden übersichtlich dargestellt.
 
-# Funktionen des ADI File Editors
+Funktionen des ADI File Editors
 
-# 1. Datei laden und speichern
-#    - Logdateien mit der Endung `.adi` laden und speichern. Dateien mit der Endung `.adif` müssen in `.adi` umbenannt werden.
+1. Datei laden und speichern
+   - Logdateien mit der Endung `.adi` laden und speichern. Dateien mit der Endung `.adif` müssen in `.adi` umbenannt werden.
 
-# 2. Bearbeitung der Logeinträge
-#    - Bearbeitung aller Felder eines Logeintrags, einschließlich Rufzeichen, Grid-Quadrate, Modus, Signalberichte, Datum, Zeit, Frequenz, Sendeleistung und Kommentare.
+2. Bearbeitung der Logeinträge
+   - Bearbeitung aller Felder eines Logeintrags, einschließlich Rufzeichen, Grid-Quadrate, Modus, Signalberichte, Datum, Zeit, Frequenz, Sendeleistung und Kommentare.
 
-# 3. Navigation durch Einträge
-#    - Möglichkeit, durch Einträge zu navigieren (erster, letzter, vorheriger, nächster Eintrag).
+3. Navigation durch Einträge
+   - Möglichkeit, durch Einträge zu navigieren (erster, letzter, vorheriger, nächster Eintrag).
 
-# 4. Neue Einträge erstellen
-#    - Hinzufügen neuer Logeinträge.
+4. Neue Einträge erstellen
+   - Hinzufügen neuer Logeinträge.
 
-# 5. Einträge löschen
-#    - Löschen von bestehenden Logeinträgen.
+5. Einträge löschen
+   - Löschen von bestehenden Logeinträgen.
 
-# 6. Filterfunktion
-#    - Filtern von Einträgen anhand der verschiedenen Felder.
+6. Filterfunktion
+   - Filtern von Einträgen anhand der verschiedenen Felder.
 
-# 7. Anzeige der Eintragsdetails
-#    - Übersichtliche Darstellung von Informationen wie Rufzeichen, eigenes Grid-Quadrat, Betriebsart, Signalberichte, Datum, Zeit, Frequenz und weiteren Details.
+7. Anzeige der Eintragsdetails
+   - Übersichtliche Darstellung von Informationen wie Rufzeichen, eigenes Grid-Quadrat, Betriebsart, Signalberichte, Datum, Zeit, Frequenz und weiteren Details.
 
-# 8. Hinweis zur Verwendung
-#    - Nutzung des Programms auf eigene Gefahr; keine Garantie für Funktionalität oder Fehlerfreiheit; entwickelt für den eigenen Gebrauch, aber frei nutzbar.
+8. Hinweis zur Verwendung
+   - Nutzung des Programms auf eigene Gefahr; keine Garantie für Funktionalität oder Fehlerfreiheit; entwickelt für den eigenen Gebrauch, aber frei nutzbar.
 
-# 9. Formatanforderungen
-#    - Dateien müssen im ADIF-Format vorliegen, das von Programmen wie JTDX oder WSJT-X erstellt wird.
+9. Formatanforderungen
+   - Dateien müssen im ADIF-Format vorliegen, das von Programmen wie JTDX oder WSJT-X erstellt wird.
 
-# 10. Umbenennung von Dateien
-#     - Dateien mit der Endung `.adif` müssen in `.adi` umbenannt werden, um bearbeitet werden zu können.
+10. Umbenennung von Dateien
+    - Dateien mit der Endung `.adif` müssen in `.adi` umbenannt werden, um bearbeitet werden zu können.
 
 
 Einsatz auf eigene Gefahr: Der Autor weist darauf hin, dass die Nutzung des Programms auf eigene Gefahr erfolgt. Es wird keine Garantie für die Funktionalität oder Fehlerfreiheit übernommen. Das Tool wurde für den eigenen Gebrauch des Autors entwickelt, steht aber jedem Interessierten zur freien Nutzung zur Verfügung.
