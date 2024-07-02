@@ -1,58 +1,57 @@
 # Amateurfunk-adi_file_editor
-Bearbeitung von Adi files für Amaterufunk. Ändern und anlegen von Logeinträgen.
+Processing of Adi files for amateur radio. Changing and creating log entries.
 ![adi-file-editor](https://github.com/benrun007/Amateurfunk-adi_file_editor/assets/174305744/33d1cc8d-c108-4194-927f-a6e7f334bacc)
 
-Der ADI File Editor ist ein benutzerdefiniertes Tool, das entwickelt wurde, um Logdateien im ADIF-Format (Amateur Data Interchange Format) zu bearbeiten und zu ergänzen. Dieses Programm ist besonders nützlich für Funkamateure, die Betriebsarten wie FT8 oder FT4 nutzen. Hier sind die wesentlichen Funktionen und Eigenschaften des Editors zusammengefasst:
+The ADI File Editor is a custom tool designed to edit and supplement log files in the ADIF format (Amateur Data Interchange Format). This program is particularly useful for radio amateurs who use modes such as FT8 or FT4. Here is a summary of the essential functions and features of the editor:
 
-Funktionen und Eigenschaften des ADI File Editors:
-Datei laden und speichern: Der Editor ermöglicht das Laden und Speichern von Logdateien mit der Dateiendung .adi. Falls die Datei die Endung .adif hat, muss sie in .adi umbenannt werden, um mit diesem Editor verwendet werden zu können.
+Functions and Features of the ADI File Editor:
 
-Bearbeitung der Logeinträge: Alle Felder eines Logeintrags können bearbeitet werden. Dies umfasst beispielsweise Rufzeichen (call), Grid-Quadrate (gridsquare), Modus (mode), gesendete und empfangene Signalberichte (rst_sent, rst_rcvd), Datum und Zeit des QSOs (qso_date, time_on), Frequenz (freq), verwendete Sendeleistung (tx_pwr) und Kommentare.
+Load and Save Files: The editor allows you to load and save log files with the .adi file extension. If the file has the .adif extension, it must be renamed to .adi to be used with this editor.
 
-Navigation und Bearbeitung:
+Editing Log Entries: All fields of a log entry can be edited. This includes, for example, callsigns (call), grid squares (gridsquare), mode (mode), sent and received signal reports (rst_sent, rst_rcvd), date and time of the QSO (qso_date, time_on), frequency (freq), used transmission power (tx_pwr), and comments.
 
-Navigation: Der Editor ermöglicht es, durch die Einträge zu navigieren, indem man zum ersten, letzten, vorherigen oder nächsten Eintrag springt.
-Neueinträge: Es können neue Logeinträge erstellt werden.
-Löschen: Einträge können gelöscht werden.
-Filtern: Es ist möglich, nach bestimmten Kriterien zu filtern, indem man die entsprechenden Felder verwendet.
-Anzeige der Einträge: Informationen wie das Rufzeichen der Gegenstation, das eigene Grid-Quadrat, die Betriebsart, die gesendeten und empfangenen Signalberichte, das Datum und die Uhrzeit des QSOs sowie weitere Details werden übersichtlich dargestellt.
+Navigation and Editing:
 
-Funktionen des ADI File Editors
+Navigation: The editor allows you to navigate through the entries by jumping to the first, last, previous, or next entry.
+New Entries: New log entries can be created.
+Delete Entries: Entries can be deleted.
+Filter Entries: It is possible to filter by specific criteria using the corresponding fields.
+Display of Entries: Information such as the counterparty's callsign, your own grid square, the mode, the sent and received signal reports, the date and time of the QSO, and other details are clearly displayed.
+Functions of the ADI File Editor:
 
-1. Datei laden und speichern
-   - Logdateien mit der Endung `.adi` laden und speichern. Dateien mit der Endung `.adif` müssen in `.adi` umbenannt werden.
+Load and Save Files
 
-2. Bearbeitung der Logeinträge
-   - Bearbeitung aller Felder eines Logeintrags, einschließlich Rufzeichen, Grid-Quadrate, Modus, Signalberichte, Datum, Zeit, Frequenz, Sendeleistung und Kommentare.
+Load and save log files with the .adi extension. Files with the .adif extension must be renamed to .adi to be edited with this editor.
+Edit Log Entries
 
-3. Navigation durch Einträge
-   - Möglichkeit, durch Einträge zu navigieren (erster, letzter, vorheriger, nächster Eintrag).
+Edit all fields of a log entry, including callsign, grid square, mode, signal reports, date, time, frequency, transmission power, and comments.
+Navigate Entries
 
-4. Neue Einträge erstellen
-   - Hinzufügen neuer Logeinträge.
+Navigate through entries (first, last, previous, next entry).
+Create New Entries
 
-5. Einträge löschen
-   - Löschen von bestehenden Logeinträgen.
+Add new log entries.
+Delete Entries
 
-6. Filterfunktion
-   - Filtern von Einträgen anhand der verschiedenen Felder.
+Delete existing log entries.
+Filter Function
 
-7. Anzeige der Eintragsdetails
-   - Übersichtliche Darstellung von Informationen wie Rufzeichen, eigenes Grid-Quadrat, Betriebsart, Signalberichte, Datum, Zeit, Frequenz und weiteren Details.
+Filter entries based on various fields.
+Display Entry Details
 
-8. Hinweis zur Verwendung
-   - Nutzung des Programms auf eigene Gefahr; keine Garantie für Funktionalität oder Fehlerfreiheit; entwickelt für den eigenen Gebrauch, aber frei nutzbar.
+Clear display of information such as callsign, your own grid square, mode, signal reports, date, time, frequency, and other details.
+Usage Note
 
-9. Formatanforderungen
-   - Dateien müssen im ADIF-Format vorliegen, das von Programmen wie JTDX oder WSJT-X erstellt wird.
+Use the program at your own risk; no guarantee of functionality or error-free operation; developed for personal use, but free to use by anyone.
+Format Requirements
 
-10. Umbenennung von Dateien
-    - Dateien mit der Endung `.adif` müssen in `.adi` umbenannt werden, um bearbeitet werden zu können.
+Files must be in ADIF format, created by programs like JTDX or WSJT-X.
+Renaming Files
 
+Files with the .adif extension must be renamed to .adi to be edited.
+Use at your own risk: The author points out that the use of the program is at your own risk. No guarantee of functionality or error-free operation is provided. The tool was developed for the author's personal use but is available for free use by anyone.
 
-Einsatz auf eigene Gefahr: Der Autor weist darauf hin, dass die Nutzung des Programms auf eigene Gefahr erfolgt. Es wird keine Garantie für die Funktionalität oder Fehlerfreiheit übernommen. Das Tool wurde für den eigenen Gebrauch des Autors entwickelt, steht aber jedem Interessierten zur freien Nutzung zur Verfügung.
-
-Hinweis zur Verwendung:
-Formatanforderungen: Die zu bearbeitenden Dateien müssen im ADIF-Format vorliegen, welches von Programmen wie JTDX oder WSJT-X standardmäßig erstellt wird.
-Umbenennung von Dateien: Falls die Logdatei die Endung .adif hat, muss sie in .adi umbenannt werden, um mit diesem Editor bearbeitet werden zu können.
-Der ADI File Editor ist somit ein nützliches Tool für Funkamateure, die ihre Logdateien einfach und effizient verwalten möchten. Beachten Sie, dass die Nutzung des Editors auf eigene Verantwortung erfolgt und keine Haftung für mögliche Fehler übernommen wird.
+Usage Note:
+Format Requirements: The files to be edited must be in ADIF format, which is typically created by programs like JTDX or WSJT-X.
+Renaming Files: If the log file has the .adif extension, it must be renamed to .adi to be edited with this editor.
+The ADI File Editor is thus a useful tool for radio amateurs who want to manage their log files easily and efficiently. Note that the use of the editor is at your own risk, and no liability is assumed for possible errors.
