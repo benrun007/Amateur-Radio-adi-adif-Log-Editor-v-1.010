@@ -1,4 +1,22 @@
 import tkinter as tk
+"""
+    To install the Tkinter on popular Linux distros:
+    ------------------------------------------------
+    Debian/Ubuntu:
+    sudo apt install python3-tk -y  
+    
+    Fedora:
+    sudo dnf install -y python3-tkinter
+    
+    Arch:
+    sudo pacman -Syu tk --noconfirm 
+    
+    REHL/CentOS6/CentOS7:
+    sudo yum install -y python3-tkinter
+    
+    OpenSUSE:  
+    sudo zypper in -y python-tk
+"""
 from tkinter import filedialog, messagebox
 
 
@@ -7,7 +25,6 @@ class ADIFileApp:
         self.anzahl = None
         self.root = root
         self.root.title("ADI File Editor")
-        #self.root.geometry("600x600")
 
         self.file_path = tk.StringVar()
         self.records = []
