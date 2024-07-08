@@ -1,22 +1,23 @@
-import tkinter as tk
+#!/usr/bin/env python3
 """
     To install the Tkinter on popular Linux distros:
     ------------------------------------------------
     Debian/Ubuntu:
-    sudo apt install python3-tk -y  
-    
+    sudo apt install python3-tk -y
+
     Fedora:
     sudo dnf install -y python3-tkinter
-    
+
     Arch:
-    sudo pacman -Syu tk --noconfirm 
-    
+    sudo pacman -Syu tk --noconfirm
+
     REHL/CentOS6/CentOS7:
     sudo yum install -y python3-tkinter
-    
-    OpenSUSE:  
+
+    OpenSUSE:
     sudo zypper in -y python-tk
 """
+import tkinter as tk
 from tkinter import filedialog, messagebox
 
 
