@@ -5,7 +5,7 @@ Install Python version 3.xx with command in Terminal:
 Then:
   sudo apt install pip3
 Then:
-  pip3 pyinstaller
+  pip install -U pyinstaller
 after that in main directory type in Terminal:
 pyinstaller main.py -n=AdiEditor
 You get a directory Dist in this folder.
