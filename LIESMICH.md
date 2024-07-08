@@ -1,5 +1,5 @@
 # Amateurfunk-adi_file_editor
-Bearbeitung von Adi files für Amaterufunk. Ändern und anlegen von Logeinträgen.
+Bearbeitung von adi/adif files für Amaterufunk. Ändern und anlegen von Logeinträgen.
 
 ![Adi_File_Editor](https://github.com/benrun007/Amateurfunk-adi_file_editor/assets/174305744/1f9df540-2701-4fcf-827f-aa920a0ceb1b)
 
