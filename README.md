@@ -54,5 +54,4 @@ Use at your own risk: The author points out that the use of the program is at yo
 
 Usage Note:
 Format Requirements: The files to be edited must be in ADIF format, which is typically created by programs like JTDX or WSJT-X.
-Renaming Files: If the log file has the .adif extension, it must be renamed to .adi to be edited with this editor.
 The ADI File Editor is thus a useful tool for radio amateurs who want to manage their log files easily and efficiently. Note that the use of the editor is at your own risk, and no liability is assumed for possible errors.

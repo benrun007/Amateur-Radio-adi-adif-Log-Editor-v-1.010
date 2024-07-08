@@ -55,5 +55,4 @@ Einsatz auf eigene Gefahr: Der Autor weist darauf hin, dass die Nutzung des Prog
 
 Hinweis zur Verwendung:
 Formatanforderungen: Die zu bearbeitenden Dateien müssen im ADIF-Format vorliegen, welches von Programmen wie JTDX oder WSJT-X standardmäßig erstellt wird.
-Umbenennung von Dateien: Falls die Logdatei die Endung .adif hat, muss sie in .adi umbenannt werden, um mit diesem Editor bearbeitet werden zu können.
 Der ADI File Editor ist somit ein nützliches Tool für Funkamateure, die ihre Logdateien einfach und effizient verwalten möchten. Beachten Sie, dass die Nutzung des Editors auf eigene Verantwortung erfolgt und keine Haftung für mögliche Fehler übernommen wird.
