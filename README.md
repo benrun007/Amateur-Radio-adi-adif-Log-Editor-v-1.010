@@ -1,5 +1,5 @@
 # Amateurfunk-adi_file_editor
-Processing of Adi files for amateur radio. Changing and creating log entries.
+Processing of adi/adif files for amateur radio. Changing and creating log entries.
 
 ![Adi_File_Editor](https://github.com/benrun007/Amateurfunk-adi_file_editor/assets/174305744/af0e37ed-a0d6-4d27-bfd3-d631a8b88b64)
 
