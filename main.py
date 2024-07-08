@@ -25,7 +25,7 @@ class ADIFileApp:
     def __init__(self, root):
         self.anzahl = None
         self.root = root
-        self.root.title("ADI File Editor")
+        self.root.title("ADI/ADIF File Editor")
 
         self.file_path = tk.StringVar()
         self.records = []
@@ -39,7 +39,7 @@ class ADIFileApp:
         self.create_bindings()
 
     def create_widgets(self):
-        tk.Label(self.root, text="ADI File Path:").grid(row=0, column=0, sticky=tk.W)
+        tk.Label(self.root, text="ADI/ADIF File Path:").grid(row=0, column=0, sticky=tk.W)
         tk.Entry(self.root, textvariable=self.file_path, width=50).grid(row=0, column=1, columnspan=2, sticky=tk.W)
         tk.Button(self.root, text="Browse", command=self.browse_file).grid(row=0, column=3, sticky=tk.E)
 
