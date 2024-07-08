@@ -1,4 +1,4 @@
-Make an excecutabel file.
+Make an excecutable file.
 Install:
 Install Python version 3.xx with command in Terminal:
   sudo apt install python3
