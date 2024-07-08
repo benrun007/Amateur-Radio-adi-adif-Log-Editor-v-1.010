@@ -25,7 +25,7 @@ class ADIFileApp:
     def __init__(self, root):
         self.anzahl = None
         self.root = root
-        self.root.title("ADIF File Editor")
+        self.root.title("ADI/ADIF File Editor")
 
         self.file_path = tk.StringVar()
         self.records = []
